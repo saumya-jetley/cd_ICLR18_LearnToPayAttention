@@ -2,6 +2,8 @@
 require 'xlua'
 require 'optim'
 require 'nn'
+require 'cunn'
+require 'cudnn'
 dofile './provider.lua'
 c = require 'trepl.colorize'
 model_utils = require 'model_utils' -- to gather params across models
@@ -17,25 +19,24 @@ cmd_params = {
 	momentum = 0.9,
 	epoch_step = 25,
 	max_epoch = 300,
-	model_archi_local = 'atten_1_softmax_conv/vgg_conv',
-	model_archi_global = 'atten_1_softmax_conv/vgg_full',
-	model_archi_atten = 'atten_1_softmax_conv/atten',
-	model_archi_match = 'atten_1_softmax_conv/match_singleimagepred',
-	model_wts_local = '',
-	model_wts_global = '', 
-	model_wts_atten = '',
-	model_wts_match '',
-	dataset = 'provider.t7',
-	num_classes = 10, -- by default set to cifar-10
+	model_archi_local = '', --'atten_1_softmax_conv/vgg_conv',
+	model_archi_global = '', --'atten_1_softmax_conv/vgg_full',
+	model_archi_atten = '', --'atten_1_softmax_conv/atten',
+	model_archi_match = '', --'atten_1_softmax_conv/match_singleimagepred',
+	model_wts_local = '', --
+	model_wts_global = '', -- 
+	model_wts_atten = '', --
+	model_wts_match '', --
+	dataset = '', --'provider.t7',
+	num_classes = 0, --10 for cifar-10
 	backend = 'nn',
 	platformtype = 'cuda',
 	gpumode = 1,
 	gpu_setDevice = 1,
-	mode = 'train',
+	mode ='', -- 'train',
 }
 --[[ If the cmd_prompt has received an updated setting,
 update it here, else copy over from default settings --]]
-
 cmd_params = xlua.envparams(cmd_params)
 
 -- Setting for the random number generator
@@ -86,7 +87,7 @@ provider.testData.data = provider.testData.data:float()
 if cmd_params.mode == 'train' then
 	model_local = nn.Sequential()
 	model_local:add(cast(nn.Copy('torch.FloatTensor', torch.type(cast(torch.Tensor())))))
-	model_local:add(cast(dofile('models/'..cmd_params.model_archi_local..'.lua')))
+	model_local:add(cast(dofile(cmd_params.model_archi_local)))
 	model_local:get(1).updateGradInput = function(input) return end
 	if cmd_params.backend == 'cudnn' then
 	   require 'cudnn'
@@ -94,19 +95,19 @@ if cmd_params.mode == 'train' then
 	end
 
 	model_global = nn.Sequential()
-	model_global:add(cast(dofile('models/'..cmd_params.model_archi_global..'.lua')))
+	model_global:add(cast(dofile(cmd_params.model_archi_global)))
 	if cmd_params.backend == 'cudnn' then
 	    cudnn.convert(model_global:get(1), cudnn)
 	end
 
 	model_atten = nn.Sequential()
-	model_atten:add(cast(dofile('models/'..cmd_params.model_archi_atten..'.lua')))
+	model_atten:add(cast(dofile(cmd_params.model_archi_atten)))
 	if cmd_params.backend == 'cudnn' then
 	    cudnn.convert(model_atten:get(1),cudnn)
 	end
 
 	model_match = nn.Sequential()
-	model_match:add(cast(dofile('models/' ..cmd_params.model_archi_match..'.lua')))
+	model_match:add(cast(dofile(cmd_params.model_archi_match)))
 	if cmd_params.backend == 'cudnn' then
 	    cudnn.convert(model_match:get(1), 'cudnn')
 	end

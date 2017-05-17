@@ -1,0 +1,2 @@
+==> loading data	
+./#dataset/CIFARS10/cifar10_prov.t7	

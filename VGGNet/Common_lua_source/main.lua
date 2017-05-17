@@ -2,6 +2,8 @@
 require 'xlua'
 require 'optim'
 require 'nn'
+require 'cunn'
+require 'cudnn'
 dofile './provider.lua'
 c = require 'trepl.colorize'
 
@@ -15,25 +17,24 @@ cmd_params = {
 	momentum = 0.9,
 	epoch_step = 25,
 	max_epoch = 300,
-	model_archi = 'vgg_bn_drop',
-	model_wts = './logs/vgg_withHFLIP/model.net',
-	dataset = 'provider.t7',
-	num_classes = 10, -- by default set to cifar-10
+	model_archi = '', --'vgg_bn_drop',
+	model_wts = '', --'./logs/vgg_withHFLIP/model.net',
+	dataset = '', --'provider.t7',
+	num_classes = 0, --10 for cifar-10
 	backend = 'nn',
 	platformtype = 'cuda',
 	gpumode = 1,
 	gpu_setDevice = 1,
-	mode = 'train',
+	mode = '', --'train',
 }
+
 --[[ If the cmd_prompt has received an updated setting,
 update it here, else copy over from default settings --]]
-
 cmd_params = xlua.envparams(cmd_params)
 
 -- Setting for the random number generator
 local seed = 1234567890
 torch.manualSeed(seed)
-
 
 -- support function - Data casting
 function cast(t)
@@ -68,6 +69,7 @@ end
 
 --1. Data loading
 print(c.blue '==>' ..' loading data')
+print(cmd_params.dataset)
 provider = torch.load(cmd_params.dataset)
 provider.trainData.data = provider.trainData.data:float()
 provider.testData.data = provider.testData.data:float()
@@ -78,7 +80,7 @@ provider.testData.data = provider.testData.data:float()
 if cmd_params.mode == 'train' then
 	model = nn.Sequential()
 	model:add(cast(nn.Copy('torch.FloatTensor', torch.type(cast(torch.Tensor())))))
-	model:add(cast(dofile('models/'..cmd_params.model_archi..'.lua')))
+	model:add(cast(dofile(cmd_params.model_archi)))
 	model:get(1).updateGradInput = function(input) return end
 	if cmd_params.backend == 'cudnn' then
 	   require 'cudnn'

@@ -2,6 +2,8 @@
 require 'xlua'
 require 'optim'
 require 'nn'
+require 'cunn'
+require 'cudnn'
 dofile './provider.lua'
 c = require 'trepl.colorize'
 model_utils = require 'model_utils' -- to gather params across models
@@ -17,13 +19,13 @@ cmd_params = {
 	momentum = 0.9,
 	epoch_step = 25,
 	max_epoch = 300,
-	model_archi_local1 = '2_level_atten/1.1_vgg_local',
-	model_archi_local2 = '2_level_atten/1.2_vgg_local',
-	model_archi_global1 = '2_level_atten/2.1_vgg_global',
-	model_archi_global2 = '2_level_atten/2.2_vgg_global',
-	model_archi_atten1 = '2_level_atten/3.1_vgg_atten',
-	model_archi_atten2 = '2_level_atten/3.2_vgg_atten',
-	model_archi_match = '2_level_atten/4_vgg_match',
+	model_archi_local1 ='', -- '2_level_atten/1.1_vgg_local',
+	model_archi_local2 ='', -- '2_level_atten/1.2_vgg_local',
+	model_archi_global1 ='', -- '2_level_atten/2.1_vgg_global',
+	model_archi_global2 ='', -- '2_level_atten/2.2_vgg_global',
+	model_archi_atten1 ='', -- '2_level_atten/3.1_vgg_atten',
+	model_archi_atten2 ='', -- '2_level_atten/3.2_vgg_atten',
+	model_archi_match ='', -- '2_level_atten/4_vgg_match',
 	model_wts_local1 = '',
 	model_wts_local2 = '',
 	model_wts_global1 = '', 
@@ -31,13 +33,13 @@ cmd_params = {
 	model_wts_atten1 = '',
 	model_wts_atten2 = '',
 	model_wts_match '',
-	dataset = 'provider.t7',
-	num_classes = 10, -- by default set to cifar-10
+	dataset ='', -- 'provider.t7',
+	num_classes =0, -- 10, -- by default set to cifar-10
 	backend = 'nn',
 	platformtype = 'cuda',
 	gpumode = 1,
 	gpu_setDevice = 1,
-	mode = 'train',
+	mode ='', -- 'train',
 }
 --[[ If the cmd_prompt has received an updated setting,
 update it here, else copy over from default settings --]]
@@ -90,7 +92,7 @@ provider.testData.data = provider.testData.data:float()
 if cmd_params.mode == 'train' then
 	mlocal1 = nn.Sequential()
 	mlocal1:add(cast(nn.Copy('torch.FloatTensor', torch.type(cast(torch.Tensor())))))
-	mlocal1:add(cast(dofile('models/'..cmd_params.model_archi_local1..'.lua')))
+	mlocal1:add(cast(dofile(cmd_params.model_archi_local1)))
 	mlocal1:get(1).updateGradInput = function(input) return end
 	if cmd_params.backend == 'cudnn' then
 	   require 'cudnn'
@@ -98,38 +100,38 @@ if cmd_params.mode == 'train' then
 	end
 
 	mlocal2 = nn.Sequential()
-	mlocal2:add(cast(dofile('models/'..cmd_params.model_archi_local2..'.lua')))
+	mlocal2:add(cast(dofile(cmd_params.model_archi_local2)))
 	if cmd_params.backend == 'cudnn' then
 	    cudnn.convert(mlocal2:get(1), cudnn)
 	end
 
 	mglobal1 = nn.Sequential()
-	mglobal1:add(cast(dofile('models/'..cmd_params.model_archi_global1..'.lua')))
+	mglobal1:add(cast(dofile(cmd_params.model_archi_global1)))
 	if cmd_params.backend == 'cudnn' then
 	    cudnn.convert(mglobal1:get(1), cudnn)
 	end
 
 	mglobal2 = nn.Sequential()
-	mglobal2:add(cast(dofile('models/'..cmd_params.model_archi_global2..'.lua')))
+	mglobal2:add(cast(dofile(cmd_params.model_archi_global2)))
 	if cmd_params.backend == 'cudnn' then
 	    cudnn.convert(mglobal2:get(1), cudnn)
 	end
 
 	matten1 = nn.Sequential()
-	matten1:add(cast(dofile('models/'..cmd_params.model_archi_atten1..'.lua')))
+	matten1:add(cast(dofile(cmd_params.model_archi_atten1)))
 	if cmd_params.backend == 'cudnn' then
 	    cudnn.convert(matten1:get(1),cudnn)
 	end
 
 	matten2 = nn.Sequential()
-	matten2:add(cast(dofile('models/'..cmd_params.model_archi_atten2..'.lua')))
+	matten2:add(cast(dofile(cmd_params.model_archi_atten2)))
 	if cmd_params.backend == 'cudnn' then
 	    cudnn.convert(matten2:get(1),cudnn)
 	end
 
 
 	mmatch = nn.Sequential()
-	mmatch:add(cast(dofile('models/' ..cmd_params.model_archi_match..'.lua')))
+	mmatch:add(cast(dofile(cmd_params.model_archi_match)))
 	if cmd_params.backend == 'cudnn' then
 	    cudnn.convert(mmatch:get(1), 'cudnn')
 	end
