@@ -44,7 +44,7 @@ classifier:add(nn.Linear(512,512))
 classifier:add(nn.BatchNormalization(512))
 classifier:add(nn.ReLU(true))
 classifier:add(nn.Dropout(0.5))
-classifier:add(nn.Linear(512,opt.num_classes))
+classifier:add(nn.Linear(512,cmd_params.num_classes))
 vgg:add(classifier)
 
 -- initialization from MSR

@@ -23,7 +23,7 @@ local context_vec3_do = nn.Dropout(0.5)(context_vec3_relu)
 
 local context_tot = nn.JoinTable(2)({context_vec1_do, context_vec2_do, context_vec3_do})
 
-local bin_class = nn.Linear(1280, opt.num_classes)(context_tot)
+local bin_class = nn.Linear(1280, cmd_params.num_classes)(context_tot)
 
 local output = {}
 table.insert(output, bin_class)

@@ -27,7 +27,7 @@ Block(192,192,3,3,1,1,1,1)
 Block(192,192,1,1)
 Block(192,10,1,1)
 model:add(nn.SpatialAveragePooling(8,8,1,1):ceil())
-model:add(nn.View(opt.num_classes))
+model:add(nn.View(cmd_params.num_classes))
 
 for k,v in pairs(model:findModules(('%s.SpatialConvolution'):format(backend_name))) do
   v.weight:normal(0,0.05)
