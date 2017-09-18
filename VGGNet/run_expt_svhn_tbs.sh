@@ -68,7 +68,7 @@ export learningRate=1 #maybe 0.1
 export epoch_step='25'
 export lr_step='0.5'
 export max_epoch=300
-export save="logs/svhn_baseline"
+export save="#logs/svhn_baseline"
 th ./lua_source/main.lua | tee runtimerecord.txt
 #
 
