@@ -1,0 +1,38 @@
+Will save at logs/_2059318138	
+ 1629776
+[torch.LongStorage of size 1]
+
+ 71296
+[torch.LongStorage of size 1]
+
+ 257
+[torch.LongStorage of size 1]
+
+ 3082
+[torch.LongStorage of size 1]
+
+total = 1704411 (verified)
+
+--------------------------------------
+
+Only the resnet part - 1700176 (original)
+Only the resnet part - 1700176 (separate n-2 and 2) (verified)
+Only with resnet part - 1700176 (local and global separate - UTILS!) (verified)
+
+--------------------------------------
+without the classifier - 1700688 (original)
+without the classifier - 1700688 (local and global) (verified)
+--------------------------------------
+with the classifier - 1703258
+with the classifier - 
+difference (classifier) = 2570 (2560+10) (verified)
+---------------------------------------
+
+Differences are in:
+1. file number 3
+	- attention weights
+	- batch_norm (performed again)
+
+
+
+

@@ -30,6 +30,7 @@ export model_wts="./#logs/#logs_CIFAR100/vgg_bn_drop/model.net"
 export dataset="./#dataset/CIFAR100/cifar100_whitened.t7" 
 export num_classes=100
 export mode="test"
+export batchSize=125
 th ./lua_source/main.lua | tee runtimerecord.txt
 #Test accuracy:	69.29
 
@@ -47,6 +48,7 @@ export model_wts_match='#logs/#logs_CIFAR100/1atten_softmax_conv/model_match.net
 export dataset='./#dataset/CIFAR100/cifar100_whitened.t7'
 export num_classes=100
 export mode='test'
+export batchSize=125
 th ./lua_source/main_AttLevel1_1global.lua | tee runtimerecord.txt
 #Test accuracy:	76.45
 
@@ -67,6 +69,7 @@ export model_wts_match='#logs/#logs_CIFAR100/2atten_e-7_2levels_1global/mmatch.n
 export dataset='./#dataset/CIFAR100/cifar100_whitened.t7'
 export num_classes=100
 export mode='test'
+export batchSize=125
 th ./lua_source/main_AttLevel2_1global.lua | tee runtimerecord.txt
 #Test accuracy:	76.83	
 
@@ -89,6 +92,7 @@ export model_wts_match='#logs/#logs_CIFAR100/2atten_e-7_2levels_2global/mmatch.n
 export dataset='./#dataset/CIFAR100/cifar100_whitened.t7'
 export num_classes=100
 export mode='test'
+export batchSize=125
 th ./lua_source/main_AttLevel2_2global.lua | tee runtimerecord.txt
 #Test accuracy:	77.02
 
@@ -113,6 +117,7 @@ export model_wts_match='#logs/#logs_CIFAR100/3atten_e-7_3levels_1global/mmatch.n
 export dataset='./#dataset/CIFAR100/cifar100_whitened.t7'
 export num_classes=100
 export mode='test'
+export batchSize=125
 th ./lua_source/main_AttLevel3_1global.lua | tee runtimerecord.txt
 #Test accuracy:	77.02
 
@@ -135,6 +140,7 @@ export model_wts_match='#logs/#logs_CIFAR100/2atten_e-7_2levels_higherlevel/mmat
 export dataset='./#dataset/CIFAR100/cifar100_whitened.t7'
 export num_classes=100
 export mode='test'
+export batchSize=125
 th ./lua_source/main_multiplicativeatt_hl_ll.lua | tee runtimerecord.txt
 #Test accuracy:	73.61
 
@@ -157,6 +163,7 @@ export model_wts_match='#logs/#logs_CIFAR100/2atten_e-7_2levels_lowerlevel/mmatc
 export dataset='./#dataset/CIFAR100/cifar100_whitened.t7'
 export num_classes=100
 export mode='test'
+export batchSize=125
 th ./lua_source/main_multiplicativeatt_hl_ll.lua | tee runtimerecord.txt
 #Test accuracy:	71.21
 END

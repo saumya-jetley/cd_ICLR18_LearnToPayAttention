@@ -30,6 +30,7 @@ export model_wts="./#logs/#logs_CIFAR10/vgg_bn_drop_withHFLIP/model.net"
 export dataset="./#dataset/CIFAR10/cifar10_prov.t7" 
 export num_classes=10
 export mode="test"
+export batchSize=125
 th ./lua_source/main.lua | tee runtimerecord.txt
 #Test Accuracy: 92.3
 
@@ -41,6 +42,7 @@ export model_wts="./#logs/#logs_CIFAR10/vgg_bn_drop_withHFLIP/model.net"
 export dataset="./#dataset/CIFAR10/cifar10_whitened.t7" 
 export num_classes=10
 export mode="test"
+export batchSize=125
 th ./lua_source/main.lua | tee runtimerecord.txt
 #Test Accuracy: 92.3
 # The two copies are probably the same
@@ -58,6 +60,7 @@ export model_wts_match='#logs/#logs_CIFAR10/1atten_softmax_conv/model_match.net'
 export dataset='./#dataset/CIFAR10/cifar10_prov.t7'
 export num_classes=10
 export mode='test'
+export batchSize=125
 th ./lua_source/main_AttLevel1_1global.lua | tee runtimerecord.txt
 #Test accuracy:	94.39
 
@@ -74,6 +77,7 @@ export model_wts_match='#logs/#logs_CIFAR10/1atten_softmax_conv/model_match.net'
 export dataset='./#dataset/CIFAR10/cifar10_whitened.t7'
 export num_classes=10
 export mode='test'
+export batchSize=125
 th ./lua_source/main_AttLevel1_1global.lua | tee runtimerecord.txt
 #Test accuracy:	94.39
 
@@ -94,6 +98,7 @@ export model_wts_match='#logs/#logs_CIFAR10/2atten_e-7_2levels_1global/mmatch.ne
 export dataset='./#dataset/CIFAR10/cifar10_prov.t7'
 export num_classes=10
 export mode='test'
+export batchSize=125
 th ./lua_source/main_AttLevel2_1global.lua | tee runtimerecord.txt
 #Test accuracy:	94.58	
 
@@ -114,6 +119,7 @@ export model_wts_match='#logs/#logs_CIFAR10/2atten_e-7_2levels_1global/mmatch.ne
 export dataset='./#dataset/CIFAR10/cifar10_whitened.t7'
 export num_classes=10
 export mode='test'
+export batchSize=125
 th ./lua_source/main_AttLevel2_1global.lua | tee runtimerecord.txt
 #Test accuracy:	94.58	
 
@@ -136,6 +142,7 @@ export model_wts_match='#logs/#logs_CIFAR10/2atten_e-7_2levels_2global/mmatch.ne
 export dataset='./#dataset/CIFAR10/cifar10_prov.t7'
 export num_classes=10
 export mode='test'
+export batchSize=125
 th ./lua_source/main_AttLevel2_2global.lua | tee runtimerecord.txt
 #Test accuracy:	94.32
 
@@ -160,6 +167,7 @@ export model_wts_match='#logs/#logs_CIFAR10/3atten_e-7_3levels_1global/mmatch.ne
 export dataset='./#dataset/CIFAR10/cifar10_prov.t7'
 export num_classes=10
 export mode='test'
+export batchSize=125
 th ./lua_source/main_AttLevel3_1global.lua | tee runtimerecord.txt
 #Test accuracy:	93.55
 
@@ -182,6 +190,7 @@ export model_wts_match='#logs/#logs_CIFAR10/2atten_e-7_2levels_higherlevel/mmatc
 export dataset='./#dataset/CIFAR10/cifar10_prov.t7'
 export num_classes=10
 export mode='test'
+export batchSize=125
 th ./lua_source/main_multiplicativeatt_hl_ll.lua | tee runtimerecord.txt
 #Test accuracy:	81.01
 
@@ -204,6 +213,7 @@ export model_wts_match='#logs/#logs_CIFAR10/2atten_e-7_2levels_lowerlevel/mmatch
 export dataset='./#dataset/CIFAR10/cifar10_prov.t7'
 export num_classes=10
 export mode='test'
+export batchSize=125
 th ./lua_source/main_multiplicativeatt_hl_ll.lua | tee runtimerecord.txt
 #Test accuracy:	61.69
 END	

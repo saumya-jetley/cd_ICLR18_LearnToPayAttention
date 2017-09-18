@@ -15,7 +15,8 @@ cmd_params = {
 	learningRateDecay = 1e-7,
 	weightDecay = 0.0005,
 	momentum = 0.9,
-	epoch_step = 25,
+	epoch_step = '25',
+	lr_step = '0.5',
 	max_epoch = 300,
 	model_archi = '', --'vgg_bn_drop',
 	model_wts = '', --'./logs/vgg_withHFLIP/model.net',
@@ -31,6 +32,9 @@ cmd_params = {
 --[[ If the cmd_prompt has received an updated setting,
 update it here, else copy over from default settings --]]
 cmd_params = xlua.envparams(cmd_params)
+
+cmd_params.epoch_step = tonumber(cmd_params.epoch_step) or loadstring('return '..cmd_params.epoch_step)()
+cmd_params.lr_step = tonumber(cmd_params.lr_step) or loadstring('return '..cmd_params.lr_step)()
 
 -- Setting for the random number generator
 local seed = 1234567890
@@ -56,7 +60,8 @@ function cast(t)
 end
 
 -- support function - Data augmentation
-function data_aug(input)
+function hflip_aug(input)
+      --hflip
       local bs = input:size(1)
       local flip_mask = torch.randperm(bs):le(bs/2)
       for i=1,input:size(1) do
@@ -64,6 +69,18 @@ function data_aug(input)
       end
     return input
 end
+
+function rot_aug(input, pad)
+    -- Rotation
+    assert(input:dim() == 4)
+    local imsize = input:size(4)
+    local padded = nn.SpatialZeroPadding(pad,pad,pad,pad):forward(input)
+    local x = torch.random(1,pad*2 + 1)
+    local y = torch.random(1,pad*2 + 1)
+    local input_rot = padded:narrow(4,x,imsize):narrow(3,y,imsize)
+    return input_rot:contiguous()
+end
+
 
 -- Initiation
 
@@ -123,9 +140,13 @@ function train()
     model:training()
     epoch = epoch or 1
     
-    if epoch % cmd_params.epoch_step == 0 then optimState.learningRate = optimState.learningRate/2 end
-    print(c.blue '==>'.." online epoch # " .. epoch .. ' [batchSize = ' .. cmd_params.batchSize .. ']')
- 
+    if torch.type(cmd_params.epoch_step) == 'number' and epoch % cmd_params.epoch_step == 0 then 
+	optimState.learningRate = optimState.learningRate*cmd_params.lr_step
+    elseif torch.type(cmd_params.epoch_step) == 'table' and tablex.find(cmd_params.epoch_step, epoch) then
+	optimState.learningRate = optimState.learningRate*cmd_params.lr_step[tablex.find(cmd_params.epoch_step, epoch)]
+    end
+
+    print(c.blue '==>'.." online epoch # " .. epoch .. ' [batchSize = ' .. cmd_params.batchSize .. ']')  
 
     local targets = cast(torch.FloatTensor(cmd_params.batchSize))
     local indices = torch.randperm(provider.trainData.data:size(1)):long():split(cmd_params.batchSize)
@@ -136,7 +157,7 @@ function train()
     for t,v in ipairs(indices) do
         xlua.progress(t, #indices)
         inputs = provider.trainData.data:index(1,v)
-        inputs = data_aug(inputs)
+        inputs = hflip_aug(inputs)
         targets:copy(provider.trainData.labels:index(1,v))
         
         local feval = function(x)
@@ -171,7 +192,7 @@ function test()
   epoch = epoch or 1
   model:evaluate()   -- disable flips, dropouts and batch normalization
   print(c.blue '==>'.." testing")
-  local bs = 125
+  local bs = 16
   for i=1,provider.testData.data:size(1),bs do
     local outputs = model:forward(provider.testData.data:narrow(1,i,bs))
     confusion:batchAdd(outputs, provider.testData.labels:narrow(1,i,bs))

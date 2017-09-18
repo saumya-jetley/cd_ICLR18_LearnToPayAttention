@@ -1,0 +1,1 @@
+1. widen_factor=1 depth=164 ./scripts/train_cifar_2.sh
