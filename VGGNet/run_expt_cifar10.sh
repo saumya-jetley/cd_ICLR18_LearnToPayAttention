@@ -6,7 +6,8 @@ export model_archi_match='models/models_CIFARS/1_level_atten_softmax_conv_DPvers
 export dataset='./#dataset/CIFAR10/cifar10_whitened.t7'
 export num_classes=10
 export mode='train'
-export save='attention_level1_cifar10'
+export save='#logs/attention_level1_cifar10'
+export test_batchSize=10
 th ./lua_source/main_AttLevel1_1global.lua | tee runtimerecord.txt
 #
 

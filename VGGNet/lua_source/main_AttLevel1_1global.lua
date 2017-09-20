@@ -36,6 +36,7 @@ cmd_params = {
 	gpumode = 1,
 	gpu_setDevice = 1,
 	mode ='', -- 'train',
+	test_batchSize=128
 }
 --[[ If the cmd_prompt has received an updated setting,
 update it here, else copy over from default settings --]]
@@ -98,12 +99,11 @@ print(c.blue '==>' ..' loading data')
 provider = torch.load(cmd_params.dataset)
 provider.trainData.data = provider.trainData.data:float()
 provider.testData.data = provider.testData.data:float()
-
+print(provider.testData.data:size())
 
 --2. Model creation
 -- At train time
 if cmd_params.mode == 'train' then
-print('going here')
 	model_local = nn.Sequential()
 	model_local:add(cast(nn.Copy('torch.FloatTensor', torch.type(cast(torch.Tensor())))))
 	model_local:add(cast(dofile(cmd_params.model_archi_local)))
@@ -196,7 +196,7 @@ function train()
 	optimState.learningRate = optimState.learningRate*cmd_params.lr_step
     elseif torch.type(cmd_params.epoch_step) == 'table' and tablex.find(cmd_params.epoch_step, epoch) then
 	optimState.learningRate = optimState.learningRate*cmd_params.lr_step[tablex.find(cmd_params.epoch_step, epoch)]
-    return
+    end
 
     print(c.blue '==>'.." online epoch # " .. epoch .. ' [batchSize = ' .. cmd_params.batchSize .. ']')
 
@@ -253,7 +253,7 @@ function test()
    model_match:evaluate()   -- disable flips, dropouts and batch normalization
 
   print(c.blue '==>'.." testing")
-  local bs = cmd_params.batchSize
+  local bs = cmd_params.test_batchSize
   for i=1,provider.testData.data:size(1),bs do
     local lfeat = model_local:forward(provider.testData.data:narrow(1,i,bs))
     local gfeat = model_global:forward(lfeat)

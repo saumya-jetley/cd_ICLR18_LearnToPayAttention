@@ -27,6 +27,7 @@ cmd_params = {
 	gpumode = 1,
 	gpu_setDevice = 1,
 	mode = '', --'train',
+	test_batchSize = 10
 }
 
 --[[ If the cmd_prompt has received an updated setting,
@@ -90,6 +91,7 @@ print(cmd_params.dataset)
 provider = torch.load(cmd_params.dataset)
 provider.trainData.data = provider.trainData.data:float()
 provider.testData.data = provider.testData.data:float()
+print(provider.testData.data:size())
 
 
 --2. Model creation
@@ -192,7 +194,7 @@ function test()
   epoch = epoch or 1
   model:evaluate()   -- disable flips, dropouts and batch normalization
   print(c.blue '==>'.." testing")
-  local bs = 16
+  local bs = cmd_params.test_batchSize
   for i=1,provider.testData.data:size(1),bs do
     local outputs = model:forward(provider.testData.data:narrow(1,i,bs))
     confusion:batchAdd(outputs, provider.testData.labels:narrow(1,i,bs))
