@@ -59,16 +59,17 @@ END
 
 # Train svhn-10 (main)
 export model_archi="./models/models_SVHN/vgg_bn_drop.lua"
-export model_wts="./#logs/#logs_SVHN/vgg_bn_drop/----" 
-export dataset="./#dataset/SVHN/svhn_provider.t7" 
+#export model_wts="./#logs/#logs_SVHN/vgg_bn_drop/----" 
+export dataset="./#dataset/SVHN/svhn_orig.t7" 
 export num_classes=10
 export mode="train"
 export batchSize=128
-export learningRate=0.1 #maybe 0.1
+export learningRate=0.1
 export epoch_step='25'
 export lr_step='0.5'
 export max_epoch=300
 export save="#logs/svhn_baseline"
+export test_batchSize=16
 th ./lua_source/main.lua | tee runtimerecord.txt
 #
 
