@@ -1,3 +1,13 @@
+# Train cifar-10 (baseline vgg model)
+export model_archi='./models/models_CIFARS/vgg_bn_drop.lua'
+export dataset='./#dataset/CIFAR10/cifar10_whitened.t7'
+export num_classes=10
+export mode='train'
+export save='#logs/baseline_cifar10'
+export test_batchSize=10
+th ./lua_source/main.lua | tee runtimerecord.txt
+
+:<<'END'
 # Train cifar-10 (1level-with DP)
 export model_archi_local='models/models_CIFARS/1_level_atten_softmax_conv_DPversion/1_vgg_conv.lua' 
 export model_archi_global='models/models_CIFARS/1_level_atten_softmax_conv_DPversion/2_vgg_full.lua'
@@ -12,7 +22,6 @@ th ./lua_source/main_AttLevel1_1global.lua | tee runtimerecord.txt
 #
 
 
-:<<'END'
 # Train cifar-10 (1level)
 export model_archi_local='models/models_CIFARS/1_level_atten_softmax_conv/1_vgg_conv.lua' 
 export model_archi_global='models/models_CIFARS/1_level_atten_softmax_conv/2_vgg_full.lua'
