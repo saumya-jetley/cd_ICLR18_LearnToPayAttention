@@ -1,6 +1,14 @@
 # ActiveAttention
 Active attention in classification networks: Attention that is optimised at the time of model training.
 
+Installations:
+- Torch (can be installed with sudo and out-of-the-box as long as all the dependencies are installed on the machine.)
+- optnet package - to optimise the network
+- iterm package
+- image package
+- setup cudnn and provide path (LD_LIBRARY_PATH or export CUDNN_PATH='/cudart.so.5')
+
+
 Sample Run:
  - Enter VGGNet folder
  - Refer to the .sh scripts for the train and test settings for the different architectures and datasets
