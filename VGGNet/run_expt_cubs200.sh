@@ -1,3 +1,59 @@
+#-------------------------------TRAIN-------------------------------------------------------------
+:<<'END'
+# Train cubs-200 (2level_1global_concatDP)
+export model_archi_local1='models/models_CUBS200/2_level_atten_1globalDP/1.1_vgg_local.lua'
+export model_archi_local2='models/models_CUBS200/2_level_atten_1globalDP/1.2_vgg_local.lua'
+export model_archi_global2='models/models_CUBS200/2_level_atten_1globalDP/2.2_vgg_global.lua'
+export model_archi_atten1='models/models_CUBS200/2_level_atten_1globalDP/3.1_vgg_atten.lua'
+export model_archi_atten2='models/models_CUBS200/2_level_atten_1globalDP/3.2_vgg_atten.lua'
+export model_archi_match='models/models_CUBS200/2_level_atten_1globalDP/4_vgg_match.lua'
+export model_wts_local1='#logs/trials/2_level_atten_1global_concatDP100/----------'
+export model_wts_local2='#logs/trials/2_level_atten_1global_concatDP100/-----------'
+export model_wts_global2='#logs/trials/2_level_atten_1global_concatDP100/---------' 
+export model_wts_atten1='#logs/trials/2_level_atten_1global_concatDP100/---------'
+export model_wts_atten2='#logs/trials/2_level_atten_1global_concatDP100/---------'
+export model_wts_match='#logs/trials/2_level_atten_1global_concatDP100/-----------'
+export dataset='./#dataset/CUBS-200/cubs-200.t7'
+export num_classes=200
+export batchSize=128
+export testbatchSize=2
+export learningRate=0.1
+export epoch_step='{30,60,90,120,150,180,210,240,270,300}'
+export max_epoch=320
+export lr_step='{2,2,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5}'
+export mode='train'
+export save='#logs/trials/2_level_atten_1global_cubs_concatDP'
+th ./lua_source/main_AttLevel2_1global.lua | tee runtimerecord_cubs_2level_concatdp.txt
+END
+
+# Train cubs-200 (2levels-HL-PAN)
+export model_archi_local1='models/models_CUBS200/2_level_atten_higherlevel_PAN/1.1_vgg_local.lua'
+export model_archi_local2='models/models_CUBS200/2_level_atten_higherlevel_PAN/1.2_vgg_local.lua'
+export model_archi_global1='models/models_CUBS200/2_level_atten_higherlevel_PAN/2.1_vgg_global.lua'
+export model_archi_global2='models/models_CUBS200/2_level_atten_higherlevel_PAN/2.2_vgg_global.lua'
+export model_archi_atten1='models/models_CUBS200/2_level_atten_higherlevel_PAN/3.1_vgg_atten.lua'
+export model_archi_atten2='models/models_CUBS200/2_level_atten_higherlevel_PAN/3.2_vgg_atten.lua'
+export model_archi_match='models/models_CUBS200/2_level_atten_higherlevel_PAN/4_vgg_match.lua'
+export model_wts_local1='#logs/trials/2_level_atten_1global_hlll_PAN_100_re/mlocal_1.net'
+export model_wts_local2='#logs/trials/2_level_atten_1global_hlll_PAN_100_re/mlocal_2.net'
+export model_wts_global1='#logs/trials/2_level_atten_1global_hlll_PAN_100_re/mglobal_1.net' 
+export model_wts_global2='#logs/trials/2_level_atten_1global_hlll_PAN_100_re/mglobal_2.net' 
+export model_wts_atten1='#logs/trials/2_level_atten_1global_hlll_PAN_100_re/matten_1.net'
+export model_wts_atten2='#logs/trials/2_level_atten_1global_hlll_PAN_100_re/matten_2.net'
+export model_wts_match='#logs/trials/2_level_atten_1global_hlll_PAN_100_re/mmatch.net'
+export dataset='./#dataset/CUBS-200/cubs-200.t7'
+export num_classes=200
+export batchSize=32
+export test_batchSize=2
+export learningRate=0.1
+export epoch_step='{30,60,90,120,150,180,210,240,270,300}'
+export max_epoch=320
+export lr_step='{2,2,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5}'
+export mode='train'
+export save='#logs/trials/2_level_atten_1global_hlll_PAN_cubs'
+th ./lua_source/main_multiplicativeatt_hl_ll.lua | tee runtimerecord_PAN_cubs.txt
+
+
 :<<'END'
 #Test cubs-200 (main)
 export model_archi="./models/models_CUBS200/vgg_bn_drop.lua"
@@ -56,8 +112,6 @@ export batchSize=2
 export mode='test'
 th ./lua_source/main_AttLevel3_1global.lua | tee runtimerecord.txt
 #Test accuracy:	73.213669313082
-END
-
 
 
 # Train cubs-200 (main)
@@ -73,7 +127,7 @@ export lr_step='{2,2,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5}'
 export mode="train"
 th ./lua_source/main.lua | tee runtimerecord.txt
 #Test Accuracy:65.188125647221
-
+END
 
 :<<'END'
 # Train cubs-200 (2level_1global)
