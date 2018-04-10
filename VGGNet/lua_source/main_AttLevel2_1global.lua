@@ -9,6 +9,7 @@ dofile './provider.lua'
 c = require 'trepl.colorize'
 model_utils = require 'model_utils' -- to gather params across models
 require 'image'
+require 'csvigo'
 
 -- default settings
 cmd_params = {
@@ -40,7 +41,10 @@ cmd_params = {
 	gpumode = 1,
 	gpu_setDevice = 1,
 	mode ='', -- 'train',
+	test_batchSize=10,
+    save_attention=false,
 }
+
 --[[ If the cmd_prompt has received an updated setting,
 update it here, else copy over from default settings --]]
 cmd_params = xlua.envparams(cmd_params)
@@ -105,58 +109,90 @@ provider.testData.data = provider.testData.data:float()
 --2. Model creation
 -- At train time
 if cmd_params.mode == 'train' then
-	mlocal1 = nn.Sequential()
-	mlocal1:add(cast(nn.Copy('torch.FloatTensor', torch.type(cast(torch.Tensor())))))
-	mlocal1:add(cast(dofile(cmd_params.model_archi_local1)))
-	mlocal1:get(1).updateGradInput = function(input) return end
-	if cmd_params.backend == 'cudnn' then
-	   require 'cudnn'
-	   cudnn.convert(mlocal1:get(2), cudnn)
-	end
+    if cmd_params.model_wts_local1 == '' then
+	    mlocal1 = nn.Sequential()
+	    mlocal1:add(cast(nn.Copy('torch.FloatTensor', torch.type(cast(torch.Tensor())))))
+	    mlocal1:add(cast(dofile(cmd_params.model_archi_local1)))
+	    mlocal1:get(1).updateGradInput = function(input) return end
+	    if cmd_params.backend == 'cudnn' then
+	       require 'cudnn'
+	       cudnn.convert(mlocal1:get(2), cudnn)
+	    end
 
-	mlocal2 = nn.Sequential()
-	mlocal2:add(cast(dofile(cmd_params.model_archi_local2)))
-	if cmd_params.backend == 'cudnn' then
-	    cudnn.convert(mlocal2:get(1), cudnn)
-	end
+	    mlocal2 = nn.Sequential()
+	    mlocal2:add(cast(dofile(cmd_params.model_archi_local2)))
+	    if cmd_params.backend == 'cudnn' then
+	        cudnn.convert(mlocal2:get(1), cudnn)
+	    end
 
-	mglobal2 = nn.Sequential()
-	mglobal2:add(cast(dofile(cmd_params.model_archi_global2)))
-	if cmd_params.backend == 'cudnn' then
-	    cudnn.convert(mglobal2:get(1), cudnn)
-	end
+	    mglobal2 = nn.Sequential()
+	    mglobal2:add(cast(dofile(cmd_params.model_archi_global2)))
+	    if cmd_params.backend == 'cudnn' then
+	        cudnn.convert(mglobal2:get(1), cudnn)
+	    end
 
-	matten1 = nn.Sequential()
-	matten1:add(cast(dofile(cmd_params.model_archi_atten1)))
-	if cmd_params.backend == 'cudnn' then
-	    cudnn.convert(matten1:get(1),cudnn)
-	end
+	    matten1 = nn.Sequential()
+	    matten1:add(cast(dofile(cmd_params.model_archi_atten1)))
+	    if cmd_params.backend == 'cudnn' then
+	        cudnn.convert(matten1:get(1),cudnn)
+	    end
 
-	matten2 = nn.Sequential()
-	matten2:add(cast(dofile(cmd_params.model_archi_atten2)))
-	if cmd_params.backend == 'cudnn' then
-	    cudnn.convert(matten2:get(1),cudnn)
-	end
+	    matten2 = nn.Sequential()
+	    matten2:add(cast(dofile(cmd_params.model_archi_atten2)))
+	    if cmd_params.backend == 'cudnn' then
+	        cudnn.convert(matten2:get(1),cudnn)
+	    end
 
+	    mmatch = nn.Sequential()
+	    mmatch:add(cast(dofile(cmd_params.model_archi_match)))
+	    if cmd_params.backend == 'cudnn' then
+	        cudnn.convert(mmatch:get(1), 'cudnn')
+	    end
 
-	mmatch = nn.Sequential()
-	mmatch:add(cast(dofile(cmd_params.model_archi_match)))
-	if cmd_params.backend == 'cudnn' then
-	    cudnn.convert(mmatch:get(1), 'cudnn')
-	end
+    else
+        print('I am loading the cifar weights')
+        -- Load weights for first 5 models
+       	model_wts_local1 = torch.load(cmd_params.model_wts_local1)
+	    mlocal1 = nn.Sequential()
+	    mlocal1:add(cast(nn.Copy('torch.FloatTensor', torch.type(cast(torch.Tensor())))))
+	    mlocal1:add(model_wts_local1)
+	
+	    model_wts_local2 = torch.load(cmd_params.model_wts_local2)
+	    mlocal2 = nn.Sequential()
+	    mlocal2:add(model_wts_local2)
 
-	--------------------------------------------------------------------------------
+	    model_wts_global2 = torch.load(cmd_params.model_wts_global2)
+	    mglobal2 = nn.Sequential()
+	    mglobal2:add(model_wts_global2)
 
-	model_all = {}
-	table.insert(model_all, mlocal1)
-	table.insert(model_all, mlocal2)
-	table.insert(model_all, mglobal2)
-	table.insert(model_all, matten1)
-	table.insert(model_all, matten2)
-	table.insert(model_all, mmatch)
+	    model_wts_atten1 = torch.load(cmd_params.model_wts_atten1)
+	    matten1 = nn.Sequential()
+	    matten1:add(model_wts_atten1)
 
-	parameters, gradParameters = model_utils.combine_all_parameters(model_all)
-	print(parameters:size())
+	    model_wts_atten2 = torch.load(cmd_params.model_wts_atten2)
+	    matten2 = nn.Sequential()
+	    matten2:add(model_wts_atten2)
+
+        -- Load the file for match (fully-connected parameter count mismatch)
+	    mmatch = nn.Sequential()
+	    mmatch:add(cast(dofile(cmd_params.model_archi_match)))
+	    if cmd_params.backend == 'cudnn' then
+	        cudnn.convert(mmatch:get(1), 'cudnn')
+	    end
+
+    end
+	    --------------------------------------------------------------------------------
+
+	    model_all = {}
+	    table.insert(model_all, mlocal1)
+	    table.insert(model_all, mlocal2)
+	    table.insert(model_all, mglobal2)
+	    table.insert(model_all, matten1)
+	    table.insert(model_all, matten2)
+	    table.insert(model_all, mmatch)
+
+	    parameters, gradParameters = model_utils.combine_all_parameters(model_all)
+	    print(parameters:size())
 
 
 -- At test time
@@ -192,6 +228,7 @@ end
 --3. Criterion
 print(c.blue'==>' ..' setting criterion')
 criterion = cast(nn.CrossEntropyCriterion())
+--criterion = cast(nn.ClassNLLCriterion()) --this is being done for the pred-ensemble model **sj**
 
 --4. Testing and saving
 confusion = optim.ConfusionMatrix(cmd_params.num_classes)
@@ -226,7 +263,7 @@ function train()
 	optimState.learningRate = optimState.learningRate*cmd_params.lr_step
     elseif torch.type(cmd_params.epoch_step) == 'table' and tablex.find(cmd_params.epoch_step, epoch) then
 	optimState.learningRate = optimState.learningRate*cmd_params.lr_step[tablex.find(cmd_params.epoch_step, epoch)]
-    return
+    end
     print(c.blue '==>'.." online epoch # " .. epoch .. ' [batchSize = ' .. cmd_params.batchSize .. ']')
  
     local targets = cast(torch.FloatTensor(cmd_params.batchSize))
@@ -295,7 +332,12 @@ function test()
     mmatch:evaluate()   -- disable flips, dropouts and batch normalization
 
   print(c.blue '==>'.." testing")
-  local bs = cmd_params.batchSize
+  local bs = cmd_params.test_batchSize
+    
+  if cmd_params.save_attention==true then
+    fv_output = torch.zeros(provider.testData.data:size(1),1024)
+  end    
+
   for i=1,provider.testData.data:size(1),bs do
         
     local lfeat_1 = mlocal1:forward(provider.testData.data:narrow(1,i,bs))           
@@ -306,8 +348,25 @@ function test()
     local att_con_2 = matten2:forward({lfeat_2,gfeat_2})
     local prediction = mmatch:forward({att_con_1[2], att_con_2[2]})         
     confusion:batchAdd(prediction, provider.testData.labels:narrow(1,i,bs)) 
+    
+    if cmd_params.save_attention==true then
+        -- print(mmatch:get(1).modules)
+        -- save the 2D attention maps
+        --if i<500 then
+        csvigo.save(string.format('%s/%03d_%s',cmd_params.save,i,'level1.txt'),att_con_1[1]:squeeze():double():totable())
+        csvigo.save(string.format('%s/%03d_%s',cmd_params.save,i,'level2.txt'),att_con_2[1]:squeeze():double():totable())   
+        --end
+        -- extract the feature vector and add it to the list
+        fv_output[i] = mmatch:get(1).modules[9].output:squeeze():float()
+    end   
+
   end
 
+    if cmd_params.save_attention==true then
+        fv_output = fv_output:totable()
+        csvigo.save(string.format('%s/%s',cmd_params.save,'att2_fv_output.txt'), fv_output)        
+    end
+  
   confusion:updateValids()
   print('Test accuracy:', confusion.totalValid * 100)
   

@@ -1,0 +1,1208 @@
+==> loading data	
+==> setting criterion	
+Will save at att2_cifar100_ach	
+==> configuring optimizer	
+==> testing	
+<csv>	writing to file: att2_cifar100_ach/001_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/001_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/002_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/002_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/003_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/003_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/004_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/004_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/005_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/005_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/006_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/006_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/007_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/007_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/008_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/008_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/009_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/009_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/010_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/010_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/011_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/011_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/012_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/012_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/013_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/013_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/014_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/014_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/015_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/015_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/016_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/016_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/017_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/017_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/018_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/018_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/019_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/019_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/020_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/020_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/021_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/021_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/022_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/022_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/023_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/023_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/024_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/024_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/025_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/025_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/026_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/026_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/027_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/027_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/028_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/028_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/029_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/029_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/030_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/030_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/031_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/031_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/032_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/032_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/033_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/033_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/034_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/034_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/035_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/035_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/036_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/036_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/037_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/037_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/038_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/038_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/039_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/039_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/040_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/040_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/041_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/041_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/042_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/042_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/043_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/043_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/044_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/044_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/045_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/045_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/046_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/046_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/047_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/047_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/048_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/048_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/049_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/049_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/050_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/050_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/051_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/051_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/052_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/052_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/053_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/053_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/054_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/054_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/055_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/055_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/056_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/056_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/057_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/057_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/058_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/058_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/059_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/059_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/060_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/060_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/061_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/061_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/062_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/062_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/063_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/063_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/064_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/064_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/065_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/065_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/066_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/066_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/067_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/067_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/068_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/068_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/069_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/069_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/070_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/070_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/071_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/071_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/072_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/072_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/073_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/073_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/074_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/074_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/075_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/075_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/076_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/076_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/077_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/077_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/078_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/078_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/079_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/079_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/080_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/080_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/081_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/081_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/082_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/082_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/083_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/083_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/084_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/084_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/085_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/085_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/086_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/086_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/087_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/087_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/088_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/088_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/089_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/089_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/090_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/090_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/091_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/091_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/092_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/092_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/093_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/093_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/094_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/094_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/095_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/095_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/096_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/096_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/097_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/097_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/098_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/098_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/099_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/099_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/100_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/100_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/101_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/101_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/102_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/102_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/103_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/103_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/104_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/104_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/105_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/105_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/106_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/106_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/107_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/107_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/108_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/108_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/109_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/109_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/110_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/110_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/111_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/111_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/112_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/112_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/113_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/113_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/114_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/114_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/115_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/115_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/116_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/116_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/117_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/117_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/118_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/118_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/119_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/119_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/120_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/120_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/121_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/121_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/122_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/122_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/123_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/123_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/124_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/124_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/125_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/125_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/126_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/126_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/127_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/127_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/128_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/128_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/129_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/129_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/130_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/130_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/131_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/131_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/132_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/132_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/133_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/133_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/134_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/134_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/135_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/135_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/136_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/136_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/137_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/137_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/138_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/138_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/139_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/139_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/140_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/140_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/141_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/141_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/142_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/142_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/143_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/143_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/144_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/144_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/145_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/145_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/146_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/146_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/147_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/147_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/148_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/148_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/149_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/149_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/150_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/150_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/151_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/151_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/152_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/152_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/153_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/153_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/154_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/154_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/155_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/155_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/156_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/156_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/157_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/157_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/158_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/158_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/159_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/159_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/160_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/160_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/161_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/161_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/162_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/162_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/163_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/163_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/164_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/164_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/165_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/165_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/166_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/166_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/167_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/167_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/168_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/168_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/169_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/169_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/170_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/170_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/171_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/171_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/172_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/172_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/173_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/173_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/174_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/174_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/175_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/175_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/176_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/176_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/177_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/177_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/178_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/178_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/179_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/179_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/180_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/180_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/181_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/181_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/182_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/182_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/183_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/183_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/184_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/184_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/185_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/185_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/186_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/186_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/187_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/187_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/188_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/188_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/189_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/189_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/190_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/190_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/191_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/191_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/192_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/192_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/193_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/193_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/194_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/194_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/195_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/195_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/196_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/196_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/197_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/197_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/198_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/198_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/199_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/199_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/200_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/200_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/201_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/201_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/202_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/202_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/203_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/203_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/204_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/204_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/205_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/205_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/206_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/206_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/207_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/207_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/208_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/208_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/209_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/209_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/210_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/210_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/211_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/211_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/212_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/212_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/213_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/213_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/214_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/214_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/215_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/215_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/216_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/216_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/217_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/217_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/218_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/218_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/219_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/219_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/220_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/220_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/221_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/221_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/222_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/222_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/223_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/223_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/224_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/224_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/225_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/225_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/226_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/226_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/227_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/227_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/228_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/228_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/229_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/229_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/230_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/230_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/231_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/231_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/232_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/232_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/233_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/233_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/234_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/234_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/235_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/235_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/236_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/236_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/237_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/237_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/238_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/238_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/239_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/239_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/240_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/240_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/241_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/241_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/242_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/242_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/243_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/243_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/244_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/244_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/245_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/245_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/246_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/246_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/247_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/247_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/248_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/248_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/249_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/249_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/250_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/250_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/251_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/251_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/252_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/252_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/253_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/253_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/254_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/254_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/255_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/255_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/256_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/256_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/257_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/257_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/258_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/258_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/259_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/259_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/260_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/260_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/261_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/261_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/262_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/262_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/263_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/263_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/264_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/264_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/265_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/265_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/266_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/266_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/267_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/267_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/268_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/268_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/269_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/269_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/270_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/270_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/271_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/271_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/272_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/272_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/273_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/273_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/274_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/274_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/275_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/275_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/276_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/276_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/277_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/277_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/278_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/278_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/279_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/279_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/280_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/280_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/281_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/281_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/282_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/282_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/283_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/283_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/284_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/284_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/285_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/285_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/286_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/286_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/287_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/287_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/288_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/288_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/289_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/289_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/290_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/290_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/291_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/291_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/292_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/292_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/293_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/293_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/294_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/294_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/295_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/295_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/296_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/296_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/297_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/297_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/298_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/298_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/299_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/299_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/300_level1.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/300_level2.txt	
+<csv>	writing done	
+<csv>	writing to file: att2_cifar100_ach/att2_fv_output.txt	
+<csv>	writing done	
+Test accuracy:	8.3333333333333	

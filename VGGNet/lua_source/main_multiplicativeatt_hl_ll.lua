@@ -9,6 +9,7 @@ dofile './provider.lua'
 c = require 'trepl.colorize'
 model_utils = require 'model_utils' -- to gather params across models
 require 'image'
+require 'csvigo'
 
 -- default settings
 cmd_params = {
@@ -36,12 +37,14 @@ cmd_params = {
 	model_wts_atten2 ='',
 	model_wts_match = '',
 	dataset ='', --'provider.t7',
-	num_classes =0, -- 10, -- by default set to cifar-10
+	num_classes = 0, -- 10, -- by default set to cifar-10
 	backend = 'nn',
 	platformtype = 'cuda',
 	gpumode = 1,
 	gpu_setDevice = 1,
+    test_batchSize = 10,
 	mode = '', --'train',
+    save_attention=false,
 }
 --[[ If the cmd_prompt has received an updated setting,
 update it here, else copy over from default settings --]]
@@ -106,65 +109,152 @@ provider.testData.data = provider.testData.data:float()
 --2. Model creation
 -- At train time
 if cmd_params.mode == 'train' then
-	mlocal_1 = nn.Sequential()
-	mlocal_1:add(cast(nn.Copy('torch.FloatTensor', torch.type(cast(torch.Tensor())))))
-	mlocal_1:add(cast(dofile(cmd_params.model_archi_local1)))
-	mlocal_1:get(1).updateGradInput = function(input) return end
-	if cmd_params.backend == 'cudnn' then
-	   require 'cudnn'
-	   cudnn.convert(mlocal_1:get(2), cudnn)
-	end
+    if cmd_params.model_wts_local1 == '' then
+	    mlocal_1 = nn.Sequential()
+	    mlocal_1:add(cast(nn.Copy('torch.FloatTensor', torch.type(cast(torch.Tensor())))))
+	    mlocal_1:add(cast(dofile(cmd_params.model_archi_local1)))
+	    mlocal_1:get(1).updateGradInput = function(input) return end
+	    if cmd_params.backend == 'cudnn' then
+	       require 'cudnn'
+	       cudnn.convert(mlocal_1:get(2), cudnn)
+	    end
 
-	mlocal_2 = nn.Sequential()
-	mlocal_2:add(cast(dofile(cmd_params.model_archi_local2)))
-	if cmd_params.backend == 'cudnn' then
-	    cudnn.convert(mlocal_2:get(1), cudnn)
-	end
+	    mlocal_2 = nn.Sequential()
+	    mlocal_2:add(cast(dofile(cmd_params.model_archi_local2)))
+	    if cmd_params.backend == 'cudnn' then
+	        cudnn.convert(mlocal_2:get(1), cudnn)
+	    end
 
-	mglobal_1 = nn.Sequential()
-	mglobal_1:add(cast(dofile(cmd_params.model_archi_global1)))
-	if cmd_params.backend == 'cudnn' then
-	    cudnn.convert(mglobal_1:get(1), cudnn)
-	end
+	    mglobal_1 = nn.Sequential()
+	    mglobal_1:add(cast(dofile(cmd_params.model_archi_global1)))
+	    if cmd_params.backend == 'cudnn' then
+	        cudnn.convert(mglobal_1:get(1), cudnn)
+	    end
 
-	mglobal_2 = nn.Sequential()
-	mglobal_2:add(cast(dofile(cmd_params.model_archi_global2)))
-	if cmd_params.backend == 'cudnn' then
-	    cudnn.convert(mglobal_2:get(1), cudnn)
-	end
+	    mglobal_2 = nn.Sequential()
+	    mglobal_2:add(cast(dofile(cmd_params.model_archi_global2)))
+	    if cmd_params.backend == 'cudnn' then
+	        cudnn.convert(mglobal_2:get(1), cudnn)
+	    end
 
-	matten_1 = nn.Sequential()
-	matten_1:add(cast(dofile(cmd_params.model_archi_atten1)))
-	if cmd_params.backend == 'cudnn' then
-	    cudnn.convert(matten_1:get(1),cudnn)
-	end
+	    matten_1 = nn.Sequential()
+	    matten_1:add(cast(dofile(cmd_params.model_archi_atten1)))
+	    if cmd_params.backend == 'cudnn' then
+	        cudnn.convert(matten_1:get(1),cudnn)
+	    end
 
-	matten_2 = nn.Sequential()
-	matten_2:add(cast(dofile(cmd_params.model_archi_atten2)))
-	if cmd_params.backend == 'cudnn' then
-	    cudnn.convert(matten_2:get(1),cudnn)
-	end
+	    matten_2 = nn.Sequential()
+	    matten_2:add(cast(dofile(cmd_params.model_archi_atten2)))
+	    if cmd_params.backend == 'cudnn' then
+	        cudnn.convert(matten_2:get(1),cudnn)
+	    end
 
+	    mmatch = nn.Sequential()
+	    mmatch:add(cast(dofile(cmd_params.model_archi_match)))
+	    if cmd_params.backend == 'cudnn' then
+	        cudnn.convert(mmatch:get(1), 'cudnn')
+	    end
 
-	mmatch = nn.Sequential()
-	mmatch:add(cast(dofile(cmd_params.model_archi_match)))
-	if cmd_params.backend == 'cudnn' then
-	    cudnn.convert(mmatch:get(1), 'cudnn')
-	end
+	    model_all = {}
+	    table.insert(model_all, mlocal_1)
+	    table.insert(model_all, mlocal_2)
+	    table.insert(model_all, mglobal_1)
+	    table.insert(model_all, mglobal_2)
+	    table.insert(model_all, matten_1)
+	    table.insert(model_all, matten_2)
+	    table.insert(model_all, mmatch)
 
+	    parameters, gradParameters = model_utils.combine_all_parameters(model_all)
+	    print(parameters:size())
+
+    else
+        print('I am loading the cifar weights')
+        -- Load weights for first 5 models
+	    model_wts_local1 = torch.load(cmd_params.model_wts_local1)
+        -- CUBS training specifically --
+        -- Make the exchanges of layers and ready the models for loading
+        print(model_wts_local1)
+        model_wts_local1:remove(26)
+        model_wts_local1:insert(nn.SpatialMaxPooling(5,5,5,5):ceil(),26)
+        print(model_wts_local1)	
+
+	    mlocal_1 = nn.Sequential()
+	    mlocal_1:add(cast(nn.Copy('torch.FloatTensor', torch.type(cast(torch.Tensor())))))
+	    mlocal_1:add(cast(model_wts_local1))
+        mlocal_1:get(1).updateGradInput = function(input) return end
+        if cmd_params.backend == 'cudnn' then
+           require 'cudnn'
+           cudnn.convert(mlocal_1:get(2), cudnn)
+        end
+        
+	    model_wts_local2 = torch.load(cmd_params.model_wts_local2)
+	    mlocal_2 = nn.Sequential()
+	    mlocal_2:add(cast(model_wts_local2))
+        if cmd_params.backend == 'cudnn' then
+            cudnn.convert(mlocal_2:get(1), cudnn)
+        end
+
+	    model_wts_global1 = torch.load(cmd_params.model_wts_global1)
+	    mglobal_1 = nn.Sequential()
+	    mglobal_1:add(cast(model_wts_global1))
+        if cmd_params.backend == 'cudnn' then
+            cudnn.convert(mglobal_1:get(1), cudnn)
+        end
+
+	    model_wts_global2 = torch.load(cmd_params.model_wts_global2)
+	    mglobal_2 = nn.Sequential()
+	    mglobal_2:add(cast(model_wts_global2))
+        if cmd_params.backend == 'cudnn' then
+            cudnn.convert(mglobal_2:get(1), cudnn)
+        end
+
+	    model_wts_atten1 = torch.load(cmd_params.model_wts_atten1)
+	    matten_1 = nn.Sequential()
+	    matten_1:add(cast(model_wts_atten1))
+        if cmd_params.backend == 'cudnn' then
+            cudnn.convert(matten_1:get(1),cudnn)
+        end
+
+	    model_wts_atten2 = torch.load(cmd_params.model_wts_atten2)
+	    matten_2 = nn.Sequential()
+	    matten_2:add(cast(model_wts_atten2))
+        if cmd_params.backend == 'cudnn' then
+            cudnn.convert(matten_2:get(1),cudnn)
+        end
+
+        --[[
+	    model_wts_match = torch.load(cmd_params.model_wts_match)
+	    mmatch = nn.Sequential()
+	    mmatch:add(cast(model_wts_match))
+        if cmd_params.backend == 'cudnn' then
+            cudnn.convert(mmatch:get(1), 'cudnn')
+        end
+        --]]
+
+        -- CUBS training specifically --
+        -- Load the architecture file for match (fc parameter count mismatch)
+	    mmatch = nn.Sequential()
+	    mmatch:add(cast(dofile(cmd_params.model_archi_match)))
+	    if cmd_params.backend == 'cudnn' then
+	        cudnn.convert(mmatch:get(1), 'cudnn')
+	    end
+
+        model_all = nn.Sequential()
+        model_all:add(mlocal_1)
+        model_all:add(mlocal_2)
+        model_all:add(mglobal_1)
+        model_all:add(mglobal_2)
+        model_all:add(matten_1)
+        model_all:add(matten_2)
+        model_all:add(mmatch)
+    
+        parameters, gradParameters = model_all:getParameters()
+        print(parameters:size())
+
+    end
 	--------------------------------------------------------------------------------
+ 
 
-	model_all = {}
-	table.insert(model_all, mlocal_1)
-	table.insert(model_all, mlocal_2)
-	table.insert(model_all, mglobal_1)
-	table.insert(model_all, mglobal_2)
-	table.insert(model_all, matten_1)
-	table.insert(model_all, matten_2)
-	table.insert(model_all, mmatch)
-
-	parameters, gradParameters = model_utils.combine_all_parameters(model_all)
-	print(parameters:size())
 
 
 -- At test time
@@ -240,7 +330,7 @@ function train()
 	optimState.learningRate = optimState.learningRate*cmd_params.lr_step
     elseif torch.type(cmd_params.epoch_step) == 'table' and tablex.find(cmd_params.epoch_step, epoch) then
 	optimState.learningRate = optimState.learningRate*cmd_params.lr_step[tablex.find(cmd_params.epoch_step, epoch)]
-    return
+    end
     print(c.blue '==>'.." online epoch # " .. epoch .. ' [batchSize = ' .. cmd_params.batchSize .. ']')
  
     local targets = cast(torch.FloatTensor(cmd_params.batchSize))
@@ -256,7 +346,7 @@ function train()
         targets:copy(provider.trainData.labels:index(1,v))      
         ----------------------------------------------------------------------- 
         local feval = function(x)
-              if x ~= parameters then parameters:copy(x) end
+                 if x ~= parameters then parameters:copy(x) end
                   gradParameters:zero()
                    ---------forward
                   local lfeat_1 = mlocal_1:forward(inputs)           
@@ -286,8 +376,10 @@ function train()
                   confusion:batchAdd(prediction, targets)
             
                   return f,gradParameters
-        end
-        optim.sgd(feval, parameters, optimState)
+         end
+         optim.sgd(feval, parameters, optimState)
+        collectgarbage()
+        collectgarbage()
     end
     confusion:updateValids()
     print(('Train accuracy: '..c.cyan'%.2f'..' %%\t time: %.2f s'):format(confusion.totalValid * 100, torch.toc(tic)))
@@ -312,7 +404,12 @@ function test()
     mmatch:evaluate()   -- disable flips, dropouts and batch normalization
 
   print(c.blue '==>'.." testing")
-  local bs = cmd_params.batchSize
+  local bs = cmd_params.test_batchSize
+
+   if cmd_params.save_attention==true then
+      fv_output = torch.zeros(provider.testData.data:size(1),512)
+    end   
+
   for i=1,provider.testData.data:size(1),bs do
         
     local lfeat_1 = mlocal_1:forward(provider.testData.data:narrow(1,i,bs))           
@@ -325,6 +422,23 @@ function test()
         
     local prediction = mmatch:forward(att_con_2[2])                
     confusion:batchAdd(prediction, provider.testData.labels:narrow(1,i,bs))
+
+     if cmd_params.save_attention==true then
+        --print(mmatch:get(1).modules)
+        -- save the 2D attention maps
+        --if i<500 then
+        csvigo.save(string.format('%s/%03d_%s',cmd_params.save,i,'level1.txt'),att_lfeat1[1]:squeeze():double():totable())
+        csvigo.save(string.format('%s/%03d_%s',cmd_params.save,i,'level2.txt'),att_con_2[1]:squeeze():double():totable())   
+        --end
+        -- extract the feature vector and add it to the list
+        fv_output[i] = mmatch:get(1).modules[4].output:squeeze():float()
+     end
+
+   end
+
+  if cmd_params.save_attention==true then
+      fv_output = fv_output:totable()
+      csvigo.save(string.format('%s/%s',cmd_params.save,'pan_fv_output.txt'), fv_output)        
   end
 
   confusion:updateValids()

@@ -21,21 +21,21 @@ cmd_params = {
 	epoch_step = '25',
 	lr_step = '0.5',
 	max_epoch = 300,
-	model_archi_local_1 ='', -- '1_vgg_local',
-	model_archi_local_2 ='', -- '2_vgg_local',
-	model_archi_local_3 ='', -- '3_vgg_local',
-	model_archi_global_3 ='', -- '3_vgg_global',
-	model_archi_atten_1 ='', -- '1_vgg_atten',
-	model_archi_atten_2 ='', -- '2_vgg_atten',
-	model_archi_atten_3 ='', -- '3_vgg_atten',
+	model_archi_local1 ='', -- '1_vgg_local',
+	model_archi_local2 ='', -- '2_vgg_local',
+	model_archi_local3 ='', -- '3_vgg_local',
+	model_archi_global3 ='', -- '3_vgg_global',
+	model_archi_atten1 ='', -- '1_vgg_atten',
+	model_archi_atten2 ='', -- '2_vgg_atten',
+	model_archi_atten3 ='', -- '3_vgg_atten',
 	model_archi_match ='', -- 'vgg_match',
-	model_wts_local_1 ='', -- '1_vgg_local',
-	model_wts_local_2 ='', -- '2_vgg_local',
-	model_wts_local_3 ='', -- '3_vgg_local',
-	model_wts_global_3 ='', -- '3_vgg_global',
-	model_wts_atten_1 ='', -- '1_vgg_atten',
-	model_wts_atten_2 ='', -- '2_vgg_atten',
-	model_wts_atten_3 ='', -- '3_vgg_atten',
+	model_wts_local1 ='', -- '1_vgg_local',
+	model_wts_local2 ='', -- '2_vgg_local',
+	model_wts_local3 ='', -- '3_vgg_local',
+	model_wts_global3 ='', -- '3_vgg_global',
+	model_wts_atten1 ='', -- '1_vgg_atten',
+	model_wts_atten2 ='', -- '2_vgg_atten',
+	model_wts_atten3 ='', -- '3_vgg_atten',
 	model_wts_match ='', -- 'vgg_match',
 	dataset ='', -- 'provider.t7',
 	num_classes =0, -- 10, -- by default set to cifar-10
@@ -44,6 +44,7 @@ cmd_params = {
 	gpumode = 1,
 	gpu_setDevice = 1,
 	mode ='', -- 'train',
+	test_batchSize=10,
 }
 --[[ If the cmd_prompt has received an updated setting,
 update it here, else copy over from default settings --]]
@@ -112,7 +113,7 @@ provider.testData.data = provider.testData.data:float()
 if cmd_params.mode == 'train' then
 	mlocal_1 = nn.Sequential()
 	mlocal_1:add(cast(nn.Copy('torch.FloatTensor', torch.type(cast(torch.Tensor())))))
-	mlocal_1:add(cast(dofile(cmd_params.model_archi_local_1)))
+	mlocal_1:add(cast(dofile(cmd_params.model_archi_local1)))
 	mlocal_1:get(1).updateGradInput = function(input) return end
 	if cmd_params.backend == 'cudnn' then
 	   require 'cudnn'
@@ -120,39 +121,39 @@ if cmd_params.mode == 'train' then
 	end
 
 	mlocal_2 = nn.Sequential()
-	mlocal_2:add(cast(dofile(cmd_params.model_archi_local_2)))
+	mlocal_2:add(cast(dofile(cmd_params.model_archi_local2)))
 	if cmd_params.backend == 'cudnn' then
 	    cudnn.convert(mlocal_2:get(1), cudnn)
 	end
 
 	mlocal_3 = nn.Sequential()
-	mlocal_3:add(cast(dofile(cmd_params.model_archi_local_3)))
+	mlocal_3:add(cast(dofile(cmd_params.model_archi_local3)))
 	if cmd_params.backend == 'cudnn' then
 	    cudnn.convert(mlocal_3:get(1), cudnn)
 	end
 	-------------------------------------------------------------------------------------------------
 
 	mglobal_3 = nn.Sequential()
-	mglobal_3:add(cast(dofile(cmd_params.model_archi_global_3)))
+	mglobal_3:add(cast(dofile(cmd_params.model_archi_global3)))
 	if cmd_params.backend == 'cudnn' then
 	    cudnn.convert(mglobal_3:get(1), cudnn)
 	end
 	-------------------------------------------------------------------------------------------------
 
 	matten_1 = nn.Sequential()
-	matten_1:add(cast(dofile(cmd_params.moel_archi_atten_1)))
+	matten_1:add(cast(dofile(cmd_params.model_archi_atten1)))
 	if cmd_params.backend == 'cudnn' then
 	    cudnn.convert(matten_1:get(1),cudnn)
 	end
 
 	matten_2 = nn.Sequential()
-	matten_2:add(cast(dofile(cmd_params.model_archi_atten_2)))
+	matten_2:add(cast(dofile(cmd_params.model_archi_atten2)))
 	if cmd_params.backend == 'cudnn' then
 	    cudnn.convert(matten_2:get(1),cudnn)
 	end
 
 	matten_3 = nn.Sequential()
-	matten_3:add(cast(dofile(cmd_params.model_archi_atten_3)))
+	matten_3:add(cast(dofile(cmd_params.model_archi_atten3)))
 	if cmd_params.backend == 'cudnn' then
 	    cudnn.convert(matten_3:get(1),cudnn)
 	end
@@ -184,33 +185,33 @@ if cmd_params.mode == 'train' then
 -- At test time
 elseif cmd_params.mode == 'test' then
 
-	model_wts_local_1 = torch.load(cmd_params.model_wts_local_1)
+	model_wts_local_1 = torch.load(cmd_params.model_wts_local1)
 	mlocal_1 = nn.Sequential()
 	mlocal_1:add(cast(nn.Copy('torch.FloatTensor', torch.type(cast(torch.Tensor())))))
 	mlocal_1:add(model_wts_local_1)
 
-	model_wts_local_2 = torch.load(cmd_params.model_wts_local_2)
+	model_wts_local_2 = torch.load(cmd_params.model_wts_local2)
 	mlocal_2 = nn.Sequential()
 	mlocal_2:add(model_wts_local_2)
 
-	model_wts_local_3 = torch.load(cmd_params.model_wts_local_3)
+	model_wts_local_3 = torch.load(cmd_params.model_wts_local3)
 	mlocal_3 = nn.Sequential()
 	mlocal_3:add(model_wts_local_3)
 	-------------------------------------------------------------------------------------------------
 
-	model_wts_global_3 = torch.load(cmd_params.model_wts_global_3)
+	model_wts_global_3 = torch.load(cmd_params.model_wts_global3)
 	mglobal_3 = nn.Sequential()
 	mglobal_3:add(model_wts_global_3)
 	-------------------------------------------------------------------------------------------------
-	model_wts_atten_1 = torch.load(cmd_params.model_wts_atten_1)
+	model_wts_atten_1 = torch.load(cmd_params.model_wts_atten1)
 	matten_1 = nn.Sequential()
 	matten_1:add(model_wts_atten_1)
 
-	model_wts_atten_2 = torch.load(cmd_params.model_wts_atten_2)
+	model_wts_atten_2 = torch.load(cmd_params.model_wts_atten2)
 	matten_2 = nn.Sequential()
 	matten_2:add(model_wts_atten_2)
 
-	model_wts_atten_3 = torch.load(cmd_params.model_wts_atten_3)
+	model_wts_atten_3 = torch.load(cmd_params.model_wts_atten3)
 	matten_3 = nn.Sequential()
 	matten_3:add(model_wts_atten_3)
 	-------------------------------------------------------------------------------------------------
@@ -261,9 +262,7 @@ function train()
 	optimState.learningRate = optimState.learningRate*cmd_params.lr_step
     elseif torch.type(cmd_params.epoch_step) == 'table' and tablex.find(cmd_params.epoch_step, epoch) then
 	optimState.learningRate = optimState.learningRate*cmd_params.lr_step[tablex.find(cmd_params.epoch_step, epoch)]
-    return
-    print(c.blue '==>'.." online epoch # " .. epoch .. ' [batchSize = ' .. cmd_params.batchSize .. ']')
- 
+    end
 
     local targets = cast(torch.FloatTensor(cmd_params.batchSize))
     local indices = torch.randperm(provider.trainData.data:size(1)):long():split(cmd_params.batchSize)
@@ -280,7 +279,7 @@ function train()
         local feval = function(x)
               if x ~= parameters then parameters:copy(x) end
                   gradParameters:zero()
-		---------forward
+		          ---------forward
                   local lfeat_1 = mlocal_1:forward(inputs)           
                   local lfeat_2 = mlocal_2:forward(lfeat_1)           
                   local lfeat_3 = mlocal_3:forward(lfeat_2)           
@@ -343,7 +342,7 @@ function test()
     mmatch:evaluate()
 
   print(c.blue '==>'.." testing")
-  local bs = cmd_params.batchSize
+  local bs = cmd_params.test_batchSize
   for i=1,provider.testData.data:size(1),bs do
     local lfeat_1 = mlocal_1:forward(provider.testData.data:narrow(1,i,bs))           
     local lfeat_2 = mlocal_2:forward(lfeat_1)           
