@@ -1,0 +1,8 @@
+1. Get the single-level attention model with dot-product.
+
+2. It has to be trained for cifar100 (to begin with).
+
+3. Get the Object discovery dataset. 
+
+4. Use the first image in the set as the template and use the others for co-segmentation.
+
