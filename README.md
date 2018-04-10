@@ -15,6 +15,9 @@ Sample Run:
 
 
 
+
+
+-------------------------------
 Note: This code is built on top of:
 1. https://github.com/szagoruyko/cifar.torch
 In particular the training parameters for VGG network can be found here - https://github.com/szagoruyko/cifar.torch/blob/master/train.lua 
