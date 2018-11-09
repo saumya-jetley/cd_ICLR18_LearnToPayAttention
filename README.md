@@ -1,4 +1,4 @@
-# ActiveAttention
+# Learn to pay attention (ICLR'18)
 Active attention in classification networks: Attention that is optimised at the time of model training.
 
 Installations:
